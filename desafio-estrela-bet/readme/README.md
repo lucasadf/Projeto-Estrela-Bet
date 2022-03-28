@@ -20,7 +20,7 @@ Como foi desenvolvido =>
 
 Como rodas o projeto => 
    - É necessária a instalação do WampServer, rodando o MYSQL na porta 3306
-   - Extrair o arquivo Projects dentro da pasta 'www' do WampServer, para conseguir rodar localmente. Ex: C:\wamp64\www\Projects
+   - Extrair o arquivo Back-end/Projects dentro da pasta 'www' do WampServer, para conseguir rodar localmente. Ex: C:\wamp64\www\Projects
    - O arquivo extrela_bet.sql já contém os comandos de banco de dados para conseguir importar no WampServer. 
    - Extrair o arquivo 'Projeto Estrela Bet' para qualquer diretório. 
    - Abrir o prompt de comando no diretório escolhido acima, e rodar o comando 'npm start' ou 'yarn start' (É necessário que tenha o node.js instalado). 
