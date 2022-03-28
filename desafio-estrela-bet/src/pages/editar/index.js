@@ -66,7 +66,6 @@ export const EditarEmpresa = () => {
         getEmpresa();
         },[id]);
 
-
     return(
         <Container maxWidth="sm">
         <div style={{display:'flex', justifyContent: 'space-between', alignItems: 'center'}}>

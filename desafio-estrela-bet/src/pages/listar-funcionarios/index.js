@@ -7,7 +7,6 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
-import TextField from '@mui/material/TextField';
 import{Link} from 'react-router-dom';
 import { Button, Container } from '@mui/material';
 import { useParams } from "react-router-dom";
@@ -17,7 +16,6 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 import { padding } from '@mui/system';
-
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -49,7 +47,7 @@ export const ListarFuncionarios = () => {
     const [status, setStatus] = useState({
       type: '',
       msg: ''
-  })
+    })
 
     const getFuncionarios = async () =>{
         fetch("http://localhost/Projects/listar-funcionarios.php?id=" + id)
@@ -89,64 +87,64 @@ export const ListarFuncionarios = () => {
 
     return (
     <Container maxWidth="lg">
-        <div style={{display:'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-            <h1>Funcionários Cadastrados</h1>
-            <div>
-                <Link to="/"  style={{ textDecoration: 'none', marginRight: 10}}>
-                    <Button variant="outlined" type="button" >
-                    Voltar
-                    </Button>
-                </Link>  
-                <Link to={"/cadastrar-funcionarios/" + id}  style={{ textDecoration: 'none' }}>
+      <div style={{display:'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+          <h1>Funcionários Cadastrados</h1>
+          <div>
+              <Link to="/"  style={{ textDecoration: 'none', marginRight: 10}}>
                   <Button variant="outlined" type="button" >
-                  Cadastrar
+                  Voltar
                   </Button>
-                </Link> 
-            </div>
-        </div>
-        {status.type === 'erro'? <Stack sx={{ width: '100%' }} spacing={2}>
-            <Alert severity="error">{status.msg}</Alert>
-            </Stack> : ""}
-        {status.type === 'success'? <Stack sx={{ width: '100%' }} spacing={2}>
-            <Alert severity="success">{status.msg}</Alert>
-            </Stack> : ""}
-            <div style={{marginBottom: 10}}></div>
-        <TableContainer component={Paper} >
-        <Table sx={{ minWidth: 700 }} aria-label="customized table">
-            <TableHead>
-            <TableRow>
-                <StyledTableCell>ID</StyledTableCell>
-                <StyledTableCell >CPF</StyledTableCell>
-                <StyledTableCell >Nome</StyledTableCell>
-                <StyledTableCell >Email</StyledTableCell>
-                <StyledTableCell >Telefone</StyledTableCell>
-                <StyledTableCell >Endereço</StyledTableCell>
-                <StyledTableCell >Editar</StyledTableCell>
-                <StyledTableCell >Apagar</StyledTableCell>
-            </TableRow>
-            </TableHead>
-            <TableBody>
-            {Object.values(data).map(funcionarios =>(
-                <StyledTableRow key={funcionarios.id_funcionario}>
-                <StyledTableCell  >{funcionarios.id_funcionario}</StyledTableCell>
-                <StyledTableCell  >{funcionarios.cpf_funcionario}</StyledTableCell>
-                <StyledTableCell  >{funcionarios.nome_funcionario}</StyledTableCell>
-                <StyledTableCell  >{funcionarios.email_funcionario}</StyledTableCell>
-                <StyledTableCell  >{funcionarios.telefone_funcionario}</StyledTableCell>
-                <StyledTableCell  >{funcionarios.endereco_funcionario}</StyledTableCell>
-                <StyledTableCell align='center' size= 'medium'>
-                  <Link to={"/editar-funcionarios/" + funcionarios.id_funcionario}><FaRegEdit style={iconFont}/></Link> 
-                </StyledTableCell>
-                <StyledTableCell align='center' size= 'medium'>
-                  <IconButton aria-label="delete" style={iconStyles} onClick={() => apagarFuncionario(funcionarios.id_funcionario)}>
-                    <DeleteIcon />
-                  </IconButton>
-                </StyledTableCell>
-                </StyledTableRow>
-            ))}
-            </TableBody>
-        </Table>
-        </TableContainer>
+              </Link>  
+              <Link to={"/cadastrar-funcionarios/" + id}  style={{ textDecoration: 'none' }}>
+                <Button variant="outlined" type="button" >
+                Cadastrar
+                </Button>
+              </Link> 
+          </div>
+      </div>
+      {status.type === 'erro'? <Stack sx={{ width: '100%' }} spacing={2}>
+          <Alert severity="error">{status.msg}</Alert>
+          </Stack> : ""}
+      {status.type === 'success'? <Stack sx={{ width: '100%' }} spacing={2}>
+          <Alert severity="success">{status.msg}</Alert>
+          </Stack> : ""}
+          <div style={{marginBottom: 10}}></div>
+      <TableContainer component={Paper} >
+      <Table sx={{ minWidth: 700 }} aria-label="customized table">
+          <TableHead>
+          <TableRow>
+              <StyledTableCell>ID</StyledTableCell>
+              <StyledTableCell >CPF</StyledTableCell>
+              <StyledTableCell >Nome</StyledTableCell>
+              <StyledTableCell >Email</StyledTableCell>
+              <StyledTableCell >Telefone</StyledTableCell>
+              <StyledTableCell >Endereço</StyledTableCell>
+              <StyledTableCell >Editar</StyledTableCell>
+              <StyledTableCell >Apagar</StyledTableCell>
+          </TableRow>
+          </TableHead>
+          <TableBody>
+          {Object.values(data).map(funcionarios =>(
+              <StyledTableRow key={funcionarios.id_funcionario}>
+              <StyledTableCell  >{funcionarios.id_funcionario}</StyledTableCell>
+              <StyledTableCell  >{funcionarios.cpf_funcionario}</StyledTableCell>
+              <StyledTableCell  >{funcionarios.nome_funcionario}</StyledTableCell>
+              <StyledTableCell  >{funcionarios.email_funcionario}</StyledTableCell>
+              <StyledTableCell  >{funcionarios.telefone_funcionario}</StyledTableCell>
+              <StyledTableCell  >{funcionarios.endereco_funcionario}</StyledTableCell>
+              <StyledTableCell align='center' size= 'medium'>
+                <Link to={"/editar-funcionarios/" + funcionarios.id_funcionario}><FaRegEdit style={iconFont}/></Link> 
+              </StyledTableCell>
+              <StyledTableCell align='center' size= 'medium'>
+                <IconButton aria-label="delete" style={iconStyles} onClick={() => apagarFuncionario(funcionarios.id_funcionario)}>
+                  <DeleteIcon />
+                </IconButton>
+              </StyledTableCell>
+              </StyledTableRow>
+          ))}
+          </TableBody>
+      </Table>
+      </TableContainer>
     </Container>
-    );
+  );
 }

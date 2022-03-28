@@ -56,8 +56,6 @@ export const CadastrarFuncionario = () => {
         });
       }
 
-
-
       return (
         <Container maxWidth="sm">
           <div style={{display:'flex', justifyContent: 'space-between', alignItems: 'center'}}>
@@ -85,6 +83,4 @@ export const CadastrarFuncionario = () => {
         </Container>
     
       );
-
-
 }

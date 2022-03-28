@@ -18,7 +18,7 @@ Como foi desenvolvido =>
 
 
 
-Como rodas o projeto => 
+Como rodar o projeto => 
    - É necessária a instalação do WampServer, rodando o MYSQL na porta 3306
    - Extrair o arquivo Back-end/Projects dentro da pasta 'www' do WampServer, para conseguir rodar localmente. Ex: C:\wamp64\www\Projects
    - O arquivo extrela_bet.sql já contém os comandos de banco de dados para conseguir importar no WampServer. 

@@ -7,7 +7,6 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
-import TextField from '@mui/material/TextField';
 import{Link} from 'react-router-dom';
 import { Button, Container } from '@mui/material';
 import { FaEye, FaRegEdit, FaTrashAlt } from "react-icons/fa";
@@ -43,7 +42,7 @@ export const Home = () => {
   const [status, setStatus] = useState({
     type: '',
     msg: ''
-})
+  })
 
   const getEmpresas = async () => {
     fetch("http://localhost/Projects/index.php")

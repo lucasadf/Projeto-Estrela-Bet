@@ -68,31 +68,30 @@ export const EditarFuncionario = () => {
         getFuncionario();
         },[id]);
 
-
     return(
         <Container maxWidth="sm">
-        <div style={{display:'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-          <h1>Editar Funcionário</h1>
-          <Link to={"/listar-funcionarios/" + id_empresa}  style={{ textDecoration: 'none' }}>
-            <Button variant="outlined" type="submit">
-              Voltar
-            </Button>
-          </Link>
-        </div>
-        {status.type === 'erro'? <Stack sx={{ width: '100%' }} spacing={2}>
-            <Alert severity="error">{status.msg}</Alert>
-            </Stack> : ""}
-        {status.type === 'success'? <Stack sx={{ width: '100%' }} spacing={2}>
-            <Alert severity="success">{status.msg}</Alert>
-            </Stack> : ""}
-        <form onSubmit={edita}>
-          <TextField id="nome_funcionario" label="Nome" variant="outlined" type="text" margin='dense' fullWidth value={nome_funcionario} onChange={e => setNomeFuncionario(e.target.value)}/>
-          <TextField id="cpf_funcionario" label="CPF" variant="outlined" type="text" margin='dense' fullWidth value={cpf_funcionario} onChange={e => setCpfFuncionario(e.target.value)}/>
-          <TextField id="email_funcionario" label="Email" variant="outlined" type="text" margin='dense' fullWidth value={email_funcionario} onChange={e => setEmailFuncionario(e.target.value)}/>
-          <TextField id="telefone_funcionario" label="Telefone" variant="outlined" type="text" margin='dense' fullWidth value={telefone_funcionario} onChange={e => setTelefoneFuncionario(e.target.value)}/>
-          <TextField id="endereco_funcionario" label="Endereço" variant="outlined" type="text" margin='dense' fullWidth value={endereco_funcionario} onChange={e => setEnderecoFuncionario(e.target.value)}/>
-          <Button variant="contained" endIcon={<SendIcon />} type="submit">Salvar</Button>
-        </form>
+          <div style={{display:'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+            <h1>Editar Funcionário</h1>
+            <Link to={"/listar-funcionarios/" + id_empresa}  style={{ textDecoration: 'none' }}>
+              <Button variant="outlined" type="submit">
+                Voltar
+              </Button>
+            </Link>
+          </div>
+          {status.type === 'erro'? <Stack sx={{ width: '100%' }} spacing={2}>
+              <Alert severity="error">{status.msg}</Alert>
+              </Stack> : ""}
+          {status.type === 'success'? <Stack sx={{ width: '100%' }} spacing={2}>
+              <Alert severity="success">{status.msg}</Alert>
+              </Stack> : ""}
+          <form onSubmit={edita}>
+            <TextField id="nome_funcionario" label="Nome" variant="outlined" type="text" margin='dense' fullWidth value={nome_funcionario} onChange={e => setNomeFuncionario(e.target.value)}/>
+            <TextField id="cpf_funcionario" label="CPF" variant="outlined" type="text" margin='dense' fullWidth value={cpf_funcionario} onChange={e => setCpfFuncionario(e.target.value)}/>
+            <TextField id="email_funcionario" label="Email" variant="outlined" type="text" margin='dense' fullWidth value={email_funcionario} onChange={e => setEmailFuncionario(e.target.value)}/>
+            <TextField id="telefone_funcionario" label="Telefone" variant="outlined" type="text" margin='dense' fullWidth value={telefone_funcionario} onChange={e => setTelefoneFuncionario(e.target.value)}/>
+            <TextField id="endereco_funcionario" label="Endereço" variant="outlined" type="text" margin='dense' fullWidth value={endereco_funcionario} onChange={e => setEnderecoFuncionario(e.target.value)}/>
+            <Button variant="contained" endIcon={<SendIcon />} type="submit">Salvar</Button>
+          </form>
       </Container>
     );
 }

@@ -11,12 +11,12 @@ function App() {
 return (
     <div>
       <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path="/cadastrar-empresas" element={<CadastrarEmpresa />}/>
-          <Route path="/listar-funcionarios/:id" element={<ListarFuncionarios />}/>
-          <Route path="/editar-empresas/:id" element={<EditarEmpresa />}/>
-          <Route path="/cadastrar-funcionarios/:id" element={<CadastrarFuncionario />}/>
-          <Route path="/editar-funcionarios/:id" element={<EditarFuncionario />}/>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/cadastrar-empresas" element={<CadastrarEmpresa/>}/>
+          <Route path="/listar-funcionarios/:id" element={<ListarFuncionarios/>}/>
+          <Route path="/editar-empresas/:id" element={<EditarEmpresa/>}/>
+          <Route path="/cadastrar-funcionarios/:id" element={<CadastrarFuncionario/>}/>
+          <Route path="/editar-funcionarios/:id" element={<EditarFuncionario/>}/>
       </Routes>
     </div>
   );

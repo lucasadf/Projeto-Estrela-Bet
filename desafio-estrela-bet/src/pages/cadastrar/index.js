@@ -79,6 +79,5 @@ export const CadastrarEmpresa = () => {
         <Button variant="contained" endIcon={<SendIcon />} type="submit">Cadastrar</Button>
       </form>
     </Container>
-
   );
 }
